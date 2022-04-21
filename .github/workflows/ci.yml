@@ -7,7 +7,7 @@ on:
     branches: [ master ]
   schedule:
     # Runs at 14:40 UTC every day
-    - cron: '40 14 * * *'
+    - cron: '0 0 * * *'
 
 jobs:
   build-test:
@@ -21,6 +21,9 @@ jobs:
       uses: actions/setup-go@v2
       with:
         go-version: 1.18
+        
+    - name: Build
+      run: go build -v ./...
 
     - name: Test
-      run: ginkgo -r -v
+      run: go test -v
