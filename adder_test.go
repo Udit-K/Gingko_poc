@@ -4,7 +4,7 @@ import (
 	. "github.com/onsi/ginkgo/v2"
 	. "github.com/onsi/gomega"
 
-	"example/hello/adder"
+	"adder"
 )
 
 var _ = Describe("Adder", func() {
