@@ -6,17 +6,19 @@ on:
   pull_request:
     branches: [ master ]
   schedule:
-    # Runs at 14:25 UTC every day
-    - cron: '25 14 * * *'
-jobs:
+    # Runs at 14:40 UTC every day
+    - cron: '40 14 * * *'
 
-  build:
+jobs:
+  build-test:
+    name: Build and Test
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v3
+    - name: Checkout code
+      uses: actions/checkout@v3
 
     - name: Set up Go
-      uses: actions/setup-go@v3
+      uses: actions/setup-go@v2
       with:
         go-version: 1.18
 
@@ -24,5 +26,4 @@ jobs:
       run: go build -v ./...
 
     - name: Test
-      # -r arguments covers all sub-directories in root
-      run: ginkgo -r
+      run: ginkgo -r -v
