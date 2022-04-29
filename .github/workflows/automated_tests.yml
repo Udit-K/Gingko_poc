@@ -9,4 +9,3 @@ on:
 jobs:
   integration-tests:
    uses: ./.github/workflows/ci.yml
-    
