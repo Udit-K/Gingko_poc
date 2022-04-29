@@ -1,0 +1,11 @@
+name: Go
+
+on:
+  schedule: # run audit every Sunday night
+    - cron:  '0 * * * *'
+  
+
+jobs:
+  integration-tests:
+   uses: ./.github/workflows/ci.yml
+    
