@@ -9,7 +9,7 @@ import (
 
 var _ = Describe("Adder", func() {
 
-	Context("When the inputs are valid", func() {
+	Context("When the inputs are valid.", func() {
 
 		Describe("Add", func() {
 
